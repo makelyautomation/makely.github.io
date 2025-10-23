@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Makely | Automatiza tu Marketing y Ventas con IA</title>
+    <meta
+      name="description"
+      content="Ahorra tiempo y aumenta tus conversiones con sistemas inteligentes que trabajan 24/7. Automatizamos marketing, ventas y atención al cliente con IA."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta property="og:title" content="Makely | Automatiza tu Marketing y Ventas con IA" />
+    <meta
+      property="og:description"
+      content="Ahorra tiempo y aumenta tus conversiones con sistemas inteligentes que trabajan 24/7. Automatizamos marketing, ventas y atención al cliente con IA."
+    />
+    <meta property="og:image" content="https://picsum.photos/1200/630" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="#" />
+    <meta property="twitter:title" content="Makely | Automatiza tu Marketing y Ventas con IA" />
+    <meta
+      property="twitter:description"
+      content="Ahorra tiempo y aumenta tus conversiones con sistemas inteligentes que trabajan 24/7. Automatizamos marketing, ventas y atención al cliente con IA."
+    />
+    <meta property="twitter:image" content="https://picsum.photos/1200/630" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Work+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'gray-950': '#0B0C0E',
+              'gray-900': '#111214',
+              'gray-850': '#151617',
+              'gray-800': '#1B1C1E',
+              'gray-750': '#202124',
+              'gray-700': '#26282B',
+              'gray-650': '#2B2E31',
+              'gray-600': '#303438',
+              'gray-500': '#3A3F44',
+              'brand-primary': '#FF6B00',
+              'brand-secondary': '#FF4500',
+              'brand-accent-light': '#FFD280',
+              'brand-light': '#FFFFFF',
+              'brand-light-accent': '#C8C8CC',
+              'brand-light-muted': '#A4A6AB',
+            },
+          },
+        },
+      }
+    </script>
+
+    <style>
+      body {
+        font-family: 'Work Sans', sans-serif;
+        background-color: #0B0C0E;
+        background-image: linear-gradient(180deg, #0B0C0E 8%, #111214 100%);
+        color: #C8C8CC;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        color: #FFFFFF;
+      }
+      #ai-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        opacity: 0.7;
+      }
+      .app-container::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXVpaWl9fX18fHyjo6PFxcV+/v7w8PDr6+upqak1NTVgYGBwcHCdnZ2UlJSUlJTS0tKrq6utrayfnp6ZmZl+fn5llZmbkZA5u5E4AAAAPklEQVR42uzcAgNAMEwFUQZkIe9/29sZHMVsYhmDB2sUdgz0UOKqLgQooFBgQYoKBgQooFBgQYoKBgQooFBgQYoKBgRelw9wAdPzCj3OkoAAAAASUVORK5CYII=');
+        opacity: 0.02;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .app-container::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, transparent, #0B0C0E 80%);
+        z-index: -1;
+        pointer-events: none;
+      }
+      .hero-gradient-bg {
+        background-image: radial-gradient(
+          ellipse 50% 60% at 50% 50%,
+          rgba(255, 107, 0, 0.25),
+          transparent 70%
+        );
+      }
+      .futuristic-card {
+        background-color: #202124;
+        border: 1px solid rgba(58, 63, 68, 0.16);
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+        border-radius: 16px;
+      }
+      .futuristic-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle 350px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(255, 210, 128, 0.06),
+          transparent 80%
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        pointer-events: none;
+      }
+      .futuristic-card:hover {
+        background-color: #26282B;
+        border-color: rgba(58, 63, 68, 0.5);
+        box-shadow: 0 0 35px rgba(255, 107, 0, 0.1),
+          inset 0 0 24px rgba(255, 107, 0, 0.05);
+        transform: translateY(-8px);
+      }
+      .futuristic-card:hover::before {
+        opacity: 1;
+      }
+      .icon-glow {
+        filter: drop-shadow(0 0 12px rgba(255, 107, 0, 0.7));
+      }
+      .gradient-text {
+  background-image: linear-gradient(90deg, #FFD280 0%, #FF6B00 100%);
+  -webkit-background-clip: text;
+  background-clip: text; /* ← esta línea nueva elimina la advertencia */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* por compatibilidad adicional */
+}
+      .scroll-snap-x-mandatory {
+        scroll-snap-type: x mandatory;
+      }
+      .scroll-snap-align-center {
+        scroll-snap-align: center;
+      }
+      .horizontal-scroll::-webkit-scrollbar {
+        height: 8px;
+      }
+      .horizontal-scroll::-webkit-scrollbar-track {
+        background: #1B1C1E;
+        border-radius: 10px;
+      }
+      .horizontal-scroll::-webkit-scrollbar-thumb {
+        background-image: linear-gradient(90deg, #FF6B00, #FF4500);
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      .horizontal-scroll::-webkit-scrollbar-thumb:hover {
+        background-image: linear-gradient(90deg, #FF4500, #FF6B00);
+      }
+      .form-input,
+      .form-textarea {
+        width: 100%;
+        background-color: #2B2E31;
+        border: 1px solid #303438;
+        color: #EDEDED;
+        border-radius: 0.75rem;
+        padding: 0.75rem 1rem;
+        transition: all 0.2s ease-in-out;
+      }
+      .form-input:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: #FF6B00;
+        box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.15);
+      }
+      .form-input::placeholder,
+      .form-textarea::placeholder {
+        color: #A4A6AB;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/index-B8CjKSTZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-kuD6cpXf.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
